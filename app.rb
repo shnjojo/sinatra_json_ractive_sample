@@ -2,6 +2,7 @@ require 'sinatra'
 require 'data_mapper'
 require 'slim'
 
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite:development.db")
 set :public_folder, File.dirname(__FILE__) + '/static'
 
 class Task
