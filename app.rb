@@ -34,11 +34,6 @@ post '/:id' do
   redirect '/'
 end
 
-get '/:task' do
-  @task = params[:task].split('-').join(' ').capitalize
-  slim :task
-end
-
 delete '/task/:id' do
   Task.get(params[:id]).destroy
   redirect '/'
