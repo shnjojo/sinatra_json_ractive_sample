@@ -1,3 +1,5 @@
 development.db
 .bundle
 .DS_Store
+.sass-cathe
+Gemfile.lock
