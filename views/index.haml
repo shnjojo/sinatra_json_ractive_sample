@@ -1,0 +1,14 @@
+%div{id: "container"}
+
+%script{id: 'temlplate', type: 'text/ractive'}
+  Hello {{name}}!
+    
+%script{src: "javascript/Ractive.js"}
+%script{src: "javascript/zepto.min.js"}
+
+:javascript
+  var sinatraRactive = new Ractive({
+    el: 'container',
+    template: '#temlplate',
+    data: #{@tasks}[0]
+  })
