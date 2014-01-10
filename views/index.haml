@@ -1,7 +1,9 @@
 %div{id: "container"}
 
 %script{id: 'temlplate', type: 'text/ractive'}
-  Hello {{name}}!
+  %p Hello {{name}}!
+  %button{"on-click" => 'sayHello'}
+    Say Hello to JoJo.
     
 %script{src: "javascript/Ractive.js"}
 %script{src: "javascript/zepto.min.js"}
@@ -11,4 +13,8 @@
     el: 'container',
     template: '#temlplate',
     data: #{@tasks}[0]
+  });
+  
+  sinatraRactive.on('sayHello', function(event){
+    sinatraRactive.set('name', 'JoJo');
   })

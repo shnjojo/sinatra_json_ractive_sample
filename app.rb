@@ -22,3 +22,7 @@ get '/' do
   @tasks = @tasks.to_json
   haml :index
 end
+
+post '/' do
+  @json_data = JSON.parse(request.body.read.to_s)
+end
